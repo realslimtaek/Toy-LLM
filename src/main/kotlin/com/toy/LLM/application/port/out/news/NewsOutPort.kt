@@ -1,9 +1,8 @@
 package com.toy.LLM.application.port.out.news
 
-interface NewsGetPort {
+import com.toy.LLM.domain.NewsData
+import com.toy.LLM.domain.StockData
 
-}
-
-interface NewsSavePort {
-
+interface NewsPort {
+    fun getNews(data: List<StockData>): List<NewsData>
 }
