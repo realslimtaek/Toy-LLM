@@ -1,9 +1,8 @@
 plugins {
 	kotlin("jvm") version "2.2.21"
 	kotlin("plugin.spring") version "2.2.21"
-	id("org.springframework.boot") version "4.0.2"
+	id("org.springframework.boot") version "4.0.1"
 	id("io.spring.dependency-management") version "1.1.7"
-	kotlin("plugin.jpa") version "2.2.21"
 }
 
 group = "com.toy"
@@ -23,6 +22,8 @@ repositories {
 dependencies {
 
 	implementation("com.google.genai:google-genai:1.0.0")
+	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
 	implementation("org.springframework.boot:spring-boot-starter-batch")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-restclient")
@@ -32,6 +33,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 	implementation("tools.jackson.module:jackson-module-kotlin")
+	runtimeOnly("mysql:mysql-connector-java:8.0.33")
 //	testImplementation("org.springframework.boot:spring-boot-starter-batch-test")
 //	testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
 //	testImplementation("org.springframework.boot:spring-boot-starter-restclient-test")
