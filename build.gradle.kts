@@ -25,7 +25,6 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
 	implementation("org.springframework.boot:spring-boot-starter-batch")
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-restclient")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("org.springframework.boot:spring-boot-starter-webmvc")
@@ -33,7 +32,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 	implementation("tools.jackson.module:jackson-module-kotlin")
-	runtimeOnly("mysql:mysql-connector-java:8.0.33")
+
 //	testImplementation("org.springframework.boot:spring-boot-starter-batch-test")
 //	testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
 //	testImplementation("org.springframework.boot:spring-boot-starter-restclient-test")
