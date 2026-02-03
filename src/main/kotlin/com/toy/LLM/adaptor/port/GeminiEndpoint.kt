@@ -1,7 +1,8 @@
 package com.toy.LLM.adaptor.port
 
+import com.toy.LLM.adaptor.port.dto.ResponseMapper
+import com.toy.LLM.adaptor.port.dto.StockInfoResponse
 import com.toy.LLM.application.port.`in`.news.NewsUseCase
-import com.toy.LLM.application.port.out.gemini.GeminiPort
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -10,24 +11,13 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/gemini")
 class GeminiEndpoint(
     private val newsUseCase: NewsUseCase,
-    private val geminiPort: GeminiPort
+    private val responseMapper: ResponseMapper
 ) {
 
     @GetMapping("/test")
     fun test(
         query: String
-    ) {
-        newsUseCase.getNews(query)
-        geminiPort.getStockName(query)
+    ): StockInfoResponse {
+        return responseMapper.toResponse(newsUseCase.getNews(query))
     }
-
-    @GetMapping
-    fun get(
-        query: String
-    ) {
-
-//        geminiPort.getStockDescription(query)
-    }
-
-
 }
