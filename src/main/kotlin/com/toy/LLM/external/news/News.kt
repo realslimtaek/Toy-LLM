@@ -12,7 +12,7 @@ class News(
 ) : NewsPort {
 
     private val webClient: WebClient = WebClient.builder()
-        .baseUrl("https://finance.yahoo.com/rss")
+        .baseUrl("https://feeds.finance.yahoo.com/rss/2.0/")
         .build()
 
     override fun getNews(data: List<StockData>): List<NewsData> = data.map { stock ->
