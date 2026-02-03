@@ -4,6 +4,7 @@ import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import com.google.genai.Models
 import com.google.genai.errors.ClientException
+import com.google.genai.errors.ServerException
 import com.google.genai.types.Content
 import com.google.genai.types.GenerateContentConfig
 import com.google.genai.types.Part
@@ -15,7 +16,6 @@ import com.toy.LLM.external.gemini.dto.StockDataResponse
 import com.toy.LLM.external.gemini.dto.StockDescriptionResponse
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
-import java.rmi.ServerException
 
 @Component
 class GeminiAdaptor(
